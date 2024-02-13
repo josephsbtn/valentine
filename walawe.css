@@ -1,0 +1,131 @@
+body {
+  height: 100;
+  background-color: pink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Mochiy Pop P One", sans-serif;
+}
+
+.all {
+  margin-top: -10;
+  z-index: 10;
+}
+input#open {
+  display: none;
+}
+
+.open {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  left: 0;
+  top: 0;
+  background-color: transparent;
+  z-index: 7;
+  cursor: pointer;
+}
+
+.surat {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  transform-style: preserve-3d;
+  transform: perspective(2500px);
+  margin-bottom: rem;
+  transition: 0.4s;
+}
+
+.front {
+  display: flexbox;
+  justify-content: center;
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  width: 300px;
+  height: 300px;
+  transform-origin: left;
+  box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.15),
+    30px 0 50px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+}
+
+.front::before {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  background-color: rgb(100, 49, 49);
+  top: 10px;
+  left: 10px;
+}
+
+.inside {
+  position: absolute;
+  background-color: rgb(122, 38, 38);
+  width: 300px;
+  height: 300px;
+  border: 1px solid black;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.22),
+    100px 20px 100px rgba(0, 0, 0, 0.1);
+}
+
+.surat .front .note img {
+  margin-left: 2.5rem;
+  width: auto;
+  height: 230px;
+  position: relative;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.surat .front h3 {
+  margin-left: 4.5rem;
+  margin-top: 2rem;
+  color: whitesmoke;
+}
+#open:checked ~ .front {
+  transform: rotateY(-155deg);
+  border: 1px solid black;
+  box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.22),
+    100px 20px 100px rgba(0, 0, 0, 0.1);
+}
+
+#open:checked ~ .front::before {
+  z-index: 5;
+  background-color: rgb(122, 38, 38);
+  width: 300px;
+  height: 300px;
+  top: 0;
+  left: 0;
+  box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.22),
+    100px 20px 100px rgba(0, 0, 0, 0.1);
+}
+
+.inside .text,
+.inside .smile {
+  text-align: center;
+  color: rgb(245, 245, 245);
+}
+
+.inside .heart img {
+  margin-left: 2rem;
+}
+
+.all .judul {
+  margin-left: 2.3rem;
+  margin-bottom: rem;
+}
+
+.surat .musik {
+  content: "";
+  background-color: #f1f3f4;
+}
+
+.surat h3 {
+  color: white;
+  margin-left: 5rem;
+  margin-bottom: 5rem;
+}
